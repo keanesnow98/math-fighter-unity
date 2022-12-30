@@ -1,3 +1,4 @@
+using MathFighter.Scenes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace MathFighter.Events
     {
         [SerializeField]
         public GameObject m_MainMenu;
+        [SerializeField]
+        public MainScene m_MainScene;
         // Start is called before the first frame update
         void Start()
         {
@@ -24,6 +27,11 @@ namespace MathFighter.Events
         {
             m_MainMenu.SetActive(true);
             m_MainMenu.GetComponent<Animator>().SetTrigger("Enter");
+        }
+
+        public void ReleasePending()
+        {
+            m_MainScene.OnMenuExited();
         }
     }
 }
