@@ -114,6 +114,11 @@ namespace MathFighter.Scenes
             currentPendingMenu = m_MainMenu;
         }
 
+        public void OnQuitButtonClicked()
+        {
+            Application.Quit();
+        }
+
         public void OnBackButtonClicked()
         {
             Destroy(currentPendingDialog.gameObject);
