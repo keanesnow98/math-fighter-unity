@@ -67,6 +67,16 @@ namespace MathFighter.Scenes
             currentPendingMenu = menu;
         }
 
+        public void OnMenuClicked(string scene)
+        {
+            m_MainMenu.SetTrigger("Exit");
+
+            previousMenu = m_MainMenu;
+            currentPendingDialog = null;
+            currentPendingScene = scene;
+            currentPendingMenu = null;
+        }
+
         public void OnHighscoreClicked(GameObject highscoresDialog)
         {
             m_Highscores.SetTrigger("Exit");
@@ -90,7 +100,7 @@ namespace MathFighter.Scenes
         public void OnMenuExited()
         {
             if (currentPendingScene != null)
-                SceneManager.LoadScene(currentPendingScene, LoadSceneMode.Additive);
+                SceneManager.LoadScene(currentPendingScene);
             else if (currentPendingDialog != null)
             {
                 currentPendingDialog = Instantiate<GameObject>(currentPendingDialog, m_Dialogs);
@@ -112,6 +122,11 @@ namespace MathFighter.Scenes
             previousMenu = subMenu;
             currentPendingScene = null;
             currentPendingMenu = m_MainMenu;
+        }
+
+        public void OnQuitButtonClicked()
+        {
+            Application.Quit();
         }
 
         public void OnBackButtonClicked()
