@@ -26,13 +26,13 @@ namespace MathFighter.Dialogs
         public void OnLeftTabButtonClicked()
         {
             if (currentIndex > 0) currentIndex--;
-            m_CurrentImage.texture = Resources.Load<Texture2D>("UI/Sprites/Help/How to play " + (currentIndex + 1));
+            m_CurrentImage.texture = Resources.Load<Texture2D>($"UI/Sprites/Help/How to play {currentIndex + 1}");
         }
 
         public void OnRightTabButtonClicked()
         {
             if (currentIndex < 2) currentIndex++;
-            m_CurrentImage.texture = Resources.Load<Texture2D>("UI/Sprites/Help/How to play " + (currentIndex + 1));
+            m_CurrentImage.texture = Resources.Load<Texture2D>($"UI/Sprites/Help/How to play {currentIndex + 1}");
         }
     }
 }

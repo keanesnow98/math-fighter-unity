@@ -23,8 +23,8 @@ namespace MathFighter.Core
 
             m_BackgroundMusic = BackgroundMusic.instance.GetComponent<AudioSource>();
             m_BackgroundMusic.volume = musicVolume * 0.01f;
-            m_MusicText.text = "Music: " + musicVolume + "%";
-            m_SoundsText.text = "Sounds: " + soundsVolume + "%";
+            m_MusicText.text = $"Music: {musicVolume}%";
+            m_SoundsText.text = $"Sounds: {soundsVolume}%";
         }
 
         // Update is called once per frame
@@ -40,7 +40,7 @@ namespace MathFighter.Core
                 musicVolume -= 10;
                 PlayerPrefs.SetInt("music_volume", musicVolume);
                 m_BackgroundMusic.volume = musicVolume * 0.01f;
-                m_MusicText.text = "Music: " + musicVolume + "%";
+                m_MusicText.text = $"Music: {musicVolume}%";
             }
         }
 
@@ -51,7 +51,7 @@ namespace MathFighter.Core
                 musicVolume += 10;
                 PlayerPrefs.SetInt("music_volume", musicVolume);
                 m_BackgroundMusic.volume = musicVolume * 0.01f;
-                m_MusicText.text = "Music: " + musicVolume + "%";
+                m_MusicText.text = $"Music: {musicVolume}%";
             }
         }
 
@@ -61,7 +61,7 @@ namespace MathFighter.Core
             {
                 soundsVolume -= 10;
                 PlayerPrefs.SetInt("sounds_volume", soundsVolume);
-                m_SoundsText.text = "Sounds: " + soundsVolume + "%";
+                m_SoundsText.text = $"Music: {soundsVolume}%";
             }
         }
 
@@ -71,7 +71,7 @@ namespace MathFighter.Core
             {
                 soundsVolume += 10;
                 PlayerPrefs.SetInt("sounds_volume", soundsVolume);
-                m_SoundsText.text = "Sounds: " + soundsVolume + "%";
+                m_SoundsText.text = $"Music: {soundsVolume}%";
             }
         }
     }

@@ -22,7 +22,7 @@ namespace MathFighter.Core
 
         public void Play(string name)
         {
-            AudioClip audioClip = Resources.Load<AudioClip>("Audios/UI/" + name);
+            AudioClip audioClip = Resources.Load<AudioClip>($"Audios/UI/{name}");
             AudioSource audioSource = new GameObject("Play Sound").AddComponent<AudioSource>();
             audioSource.clip = audioClip;
             audioSource.volume = PlayerPrefs.GetInt("sounds_volume", 100) * 0.01f;

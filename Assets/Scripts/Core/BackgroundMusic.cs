@@ -53,7 +53,7 @@ namespace MathFighter.Core
 
         public static void Play(string name, float delay = 0.0f)
         {
-            instance.currentMusic = Resources.Load<AudioClip>("Audios/Background/" + name);
+            instance.currentMusic = Resources.Load<AudioClip>($"Audios/Background/{name}");
             AudioSource audioSource = instance.GetComponent<AudioSource>();
             audioSource.clip = instance.currentMusic;
             audioSource.PlayDelayed(delay);
